@@ -117,3 +117,5 @@ InitTestScene*.unity*
 .idea/
 
 .vscode/
+
+/Assets/Plugins/Sirenix/
