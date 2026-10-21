@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8280436b56ed3477289ce8a0aab64a78, type: 3}
+  m_Name: StationActionLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::CursedCookbook.Kitchen.StationActionLibrary
+  actions:
+  - action: {fileID: 11400000, guid: 0532b8864f6e05d17b48da30690ee0de, type: 2}
+  - action: {fileID: 11400000, guid: c3a27b808e240d438bc18b8df613b69a, type: 2}
+  - action: {fileID: 11400000, guid: f350fd4e7f80574e1b3e15e0d20ff134, type: 2}
+  - action: {fileID: 11400000, guid: c9d7cbc06c9ab3abea5d6eb16c37a6f3, type: 2}
+  - action: {fileID: 11400000, guid: 71ce69f81c85e5af7beb3dcbdbc6d06f, type: 2}
+  - action: {fileID: 11400000, guid: d5f0fb4886a3ad720bfc77ea16320227, type: 2}
+  - action: {fileID: 11400000, guid: a06d0182f7a615b8cbd111334d023fdd, type: 2}

@@ -1,0 +1,56 @@
+using UnityEngine;
+
+namespace CursedCookbook.CameraSystem
+{
+    public class KitchenCamera : MonoBehaviour
+    {
+        [SerializeField] private Transform target;
+        [Tooltip("Centre of the room the camera frames.")]
+        [SerializeField] private Transform roomAnchor;
+
+        [Header("Framing")]
+        [SerializeField] private float pitch = 55f;
+        [SerializeField] private float yaw;
+        [SerializeField] private float distance = 18f;
+
+        [Header("Follow")]
+        [Tooltip("0 = locked on the room centre, 1 = fully centred on the player.")]
+        [Range(0f, 1f)] [SerializeField] private float followWeight = 0.15f;
+        [Tooltip("How far (XZ) the focus may drift from the room anchor.")]
+        [SerializeField] private Vector2 maxOffset = new(1.5f, 1f);
+        [SerializeField] private float followSmoothTime = 0.35f;
+
+        private Vector3 _focus, _focusVel;
+
+        private void Start()
+        {
+            _focus = DesiredFocus();
+            Apply();
+        }
+
+        private Vector3 Anchor => roomAnchor != null ? roomAnchor.position : Vector3.zero;
+
+        private Vector3 DesiredFocus()
+        {
+            Vector3 a = Anchor;
+            if (target == null) return a;
+            Vector3 focus = Vector3.Lerp(a, target.position, followWeight);
+            focus.x = Mathf.Clamp(focus.x, a.x - maxOffset.x, a.x + maxOffset.x);
+            focus.y = a.y;
+            focus.z = Mathf.Clamp(focus.z, a.z - maxOffset.y, a.z + maxOffset.y);
+            return focus;
+        }
+
+        private void LateUpdate()
+        {
+            _focus = Vector3.SmoothDamp(_focus, DesiredFocus(), ref _focusVel, followSmoothTime);
+            Apply();
+        }
+
+        private void Apply()
+        {
+            var rot = Quaternion.Euler(pitch, yaw, 0f);
+            transform.SetPositionAndRotation(_focus - rot * Vector3.forward * distance, rot);
+        }
+    }
+}

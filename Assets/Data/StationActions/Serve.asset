@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde8c1cbb343f89f388ba596a199eb40, type: 3}
+  m_Name: Serve
+  m_EditorClassIdentifier: Assembly-CSharp::CursedCookbook.Kitchen.StationActionDefinition
+  icon: {fileID: 0}
+  displayName: Serve
+  markerColor: {r: 0.9490196, g: 0.76862746, b: 0.41960785, a: 1}
+  markerGlow: 0.5
+  usedFor: Putting the finished dish under the cloche at the Serving Hatch and ringing the bell.
