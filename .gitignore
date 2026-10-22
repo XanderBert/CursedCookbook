@@ -114,3 +114,8 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ss]ceneDependencyCache*
 
 .idea/
+.vscode/
+
+# Odin Inspector (Sirenix)
+/[Aa]ssets/Plugins/Sirenix/
+/[Aa]ssets/Plugins/Sirenix.meta
